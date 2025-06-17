@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-OriginalApplication<original>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.gestion_envios.original.OriginalApplication",
+            "projectName": "original",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
