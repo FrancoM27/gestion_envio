@@ -11,7 +11,7 @@ jobs:
         steps:
               
             - name: Comprobar codigo repositorio
-              uses: myci-actions/checkout@8
+              uses: actions/checkout@v3 
 
             - name: Crear carpeta en el servidor AWS 
               uses: appleboy/ssh-action@v1
@@ -21,7 +21,7 @@ jobs:
                     key: ${{ secrets.PRIVATE_KEY }}
                     port: ${{ secrets.PORT }}
                     script: |
-                            mkdir -p /home/ubuntu/fs1001
+                            mkdir -p /home/ubuntu/fs1001/original 
                     
 
             - name: Sincronizar archivos con el servidor
@@ -31,7 +31,7 @@ jobs:
                 path: "./" # es la carpeta local del proyecto 
                 remote_host: ${{ secrets.IP_SERVER }}
                 remote_user: ${{ secrets.USERNAME }}
-                remote_path: "/home/ubuntu/fs1001/"
+                remote_path: "/home/ubuntu/fs1001/original"
                 remote_key: ${{ secrets.PRIVATE_KEY }}
                 remote_port: ${{ secrets.PORT }}
 
@@ -47,6 +47,6 @@ jobs:
                 timeout: 1800s
                 command_timeout: 1800s
                 script: |
-                        cd /home/ubuntu/fs1001/original/
+                        cd /home/ubuntu/fs1001/original
                         sudo docker compose down
                         sudo docker compose up -d --build
