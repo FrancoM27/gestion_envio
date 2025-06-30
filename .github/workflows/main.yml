@@ -22,7 +22,7 @@ jobs:
                     port: ${{ secrets.PORT }}
                     script: |
                             mkdir -p /home/ubuntu/fs1001
-                    debug: true
+                    
 
             - name: Sincronizar archivos con el servidor
               uses: burnett01/rsync-deployments@7.0.2
@@ -45,7 +45,7 @@ jobs:
                 key: ${{ secrets.PRIVATE_KEY }}
                 port: ${{ secrets.PORT }}
                 timeout: 1800s
-                comand_timeout: 1800s
+                command_timeout: 1800s
                 script: |
                         cd /home/ubuntu/fs1001/original/
                         sudo docker compose down
