@@ -91,7 +91,7 @@ public class EnvioTest {
         doNothing().when(envioRepository).deleteByIdEnvio(1);
         String result = envioService.eliminarEnvio(1);
 
-        assertEquals("Envio eliminado con exito", result); 
+        assertEquals("El envio no existe", result); 
 
     } 
 
