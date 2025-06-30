@@ -13,5 +13,5 @@ public interface EnvioRepository extends JpaRepository<EnvioEntity, Integer> {
     boolean existsByIdEnvio(int idEnvio); 
     // List<EnvioEntity> findByFechaEnvioBetween(String startDate, String endDate);
     void deleteByIdEnvio(int i); 
-      
+       
 }
