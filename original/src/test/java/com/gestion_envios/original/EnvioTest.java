@@ -14,11 +14,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import org.springframework.boot.test.context.SpringBootTest; 
+
 import com.gestion_envios.original.Model.Envio;
 import com.gestion_envios.original.Model.Entity.EnvioEntity;
 import com.gestion_envios.original.Repository.EnvioRepository;
 import com.gestion_envios.original.Service.EnvioService;
 
+@SpringBootTest 
 public class EnvioTest {
     
     @Mock
