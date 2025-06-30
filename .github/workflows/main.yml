@@ -22,7 +22,7 @@ jobs:
                     port: ${{ secrets.PORT }}
                     script: |
                             mkdir -p /home/ubuntu/fs1001
-
+                    debug: true
 
             - name: Sincronizar archivos con el servidor
               uses: burnett01/rsync-deployments@7.0.2
